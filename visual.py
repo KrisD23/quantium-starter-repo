@@ -14,13 +14,13 @@ regions = ['all'] + sorted(df['Region'].unique())
 
 # App layout
 app.layout = html.Div(children=[
-    html.H1('Pink Morsel Sales Visualizer', style={
+    html.H1('Pink Morsel Sales Visualizer',id="header", style={
         'textAlign': 'center',
         'color': '#2c3e50',
         'marginBottom': '20px'
     }),
 
-    html.Div([
+    html.Div(id="region_picker", children=[
         html.Label("Select Region:", style={'fontWeight': 'bold'}),
         dcc.RadioItems(
             id='region-radio',
